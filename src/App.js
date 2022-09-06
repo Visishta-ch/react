@@ -1,6 +1,7 @@
 import React from 'react';
 
 import ExpenseItem from "./components/Expenses/ExpenseItem";
+import ExpenseForm from "./components/Expenses/ExpenseForm";
 
 const App = () => {
   const expenses  = [
@@ -18,7 +19,11 @@ const App = () => {
       
         {expenses.map((expense,index) =>
           <ExpenseItem  item= {expense.item_id}  description= {expense.description} time={expense.time}  amount={expense.amount}  location = {expense.location}/ >
+
       )}
+      <ExpenseForm>
+          
+      </ExpenseForm>
       
       
     </div>
