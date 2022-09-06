@@ -1,24 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 
 const ExpenseForm = () => {
-
+    const [titleEntered, setTitleEntered] = useState('');
+    const[amountEntered, setAmountEntered] = useState('');
+    const[dateEntered, setDateEntered] = useState('');
     const titleHandler = (event) => {
-        console.log(event.target.value);
+        // console.log(event.target.value);
+        setTitleEntered(event.target.value);
+        console.log(titleEntered);
+        console.log(event.target.value)
     }
 
     const amountHandler = (event) => {
+        setAmountEntered(event.target.value);
+        console.log(amountEntered);
         console.log(event.target.value);
     }
 
     const dateHandler = (event) => {
-        console.log(event.target.value);
+        
+        setDateEntered(event.target.value);
+        console.log(dateEntered);
+        console.log(event.target.value)
     }
 
     const submitDetails = () => {
+        console.log("Submitted Expense Details :")
         console.log(document.getElementById('title').value);
-        // console.log(document.getElementById('amount').value);
-        // console.log(document.getElementById('date').value);
+        console.log(document.getElementById('amount').value);
+         console.log(document.getElementById('date').value);
         
     }
     return (
