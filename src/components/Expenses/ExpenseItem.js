@@ -7,14 +7,20 @@ import ExpenseDate from './ExpenseDate';
 
 import ExpenseDetails from './ExpenseDetails';
 function ExpenseItem(props){
-    const month = props.time.toLocaleString('en-US',{month: 'long'}); 
-    const day = props.time.toLocaleString('en-US',{day: '2-digit'});
-    const year = props.time.getFullYear();
+    
+    
+
+    const clickDeleteHandler = () => { 
+      console.log('Entry Deleted');
+    }
+    const clickEditHandler = () => {
+        console.log('Entry Updated');
+    }
     return (
         
 
             
-            <div className="expense-item">ItemNo : {props.item}
+            <Card className="expense-item">ItemNo : {props.item}
                 <div>
                    <ExpenseDate time ={props.time}/>
                    
@@ -22,8 +28,9 @@ function ExpenseItem(props){
                 <div>
                 <ExpenseDetails amount ={props.amount}/>
                 </div>
-            
-           </div>
+                <button onClick ={clickEditHandler}>Edit</button>
+                <button onClick={clickDeleteHandler}>Delete</button>
+           </Card>
         
     )
 }
