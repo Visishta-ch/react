@@ -1,9 +1,13 @@
-function ExpenseDetails(props){
-    const amount = props.amount;
+import React from 'react';
+const ExpenseDetails = (props) => {
+    const title = props.description;
+    const amount = props.amount; 
+    const location = props.location;
+
 
     return(
         <div>
-            amount = {amount}
+           <div>category = {title}</div>  ${amount} @ {location}
         </div>
     )
 }
