@@ -1,13 +1,12 @@
 import React from 'react';
 const ExpenseDetails = (props) => {
-    const title = props.description;
+    const title = props.title;
     const amount = props.amount; 
-    const location = props.location;
 
 
     return(
         <div>
-           <div>category = {title}</div>  ${amount} @ {location}
+           <div>category = {title}</div> amount = ${amount}
         </div>
     )
 }

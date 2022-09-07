@@ -1,31 +1,46 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import ExpenseItem from "./components/Expenses/ExpenseItem";
-import ExpenseForm from "./components/Expenses/ExpenseForm";
+
+import NewExpense from "./components/NewExpense/NewExpense";
+
+
+
+const dummyExpenses  = [
+  { title: 'food',date:new Date(2022,6,11),amount:250, location: 'office'},
+  { title: 'petrol', date:new Date(2022,1,7), amount:500,location: 'HpBunk'},
+  { title: 'groceries', date:new Date(2022,2,8), amount:450,location: 'Big_Basket'},
+  { title: 'currentBill', date:new Date(2022,2,9), amount:1500,location: 'houe'},
+  { title: 'swiggy',date:new Date(2022,2,10), amount:250,location: 'office'},
+  { title: 'zomato', date:new Date(2022,2,11),amount:250,location: 'office'}
+
+  ];
 
 const App = () => {
-  const expenses  = [
-  {item_id:1, description: 'food',time:new Date(2022,1,6),amount:250, location: 'office'},
-  {item_id:2, description: 'petrol', time:new Date(2022,1,7), amount:500,location: 'HpBunk'},
-  {item_id:3, description: 'groceries', time:new Date(2022,2,8), amount:450,location: 'Big_Basket'},
-  {item_id:4, description: 'currentBill', time:new Date(2022,2,9), amount:1500,location: 'houe'},
-  {item_id:5, description: 'swiggy',time:new Date(2022,2,10), amount:250,location: 'office'},
-  {item_id:6, description: 'zomato', time:new Date(2022,2,11),amount:250,location: 'office'}
+  const [expenses, setExpenses] = useState(dummyExpenses);
 
-  ]
+  const addExpenseHandler = (expense) => {
+    console.log('In App.js')
+    //console.log(expense);
+    setExpenses((prevExpenses) => {
+      return [expense, ...prevExpenses];
+    });
+    
+    
+
+  }
+
   return (
     <div id="expenses">
       <h2>Let's get started!</h2>
+
+      <NewExpense onAddExpense = {addExpenseHandler} />
       
-        {expenses.map((expense,index) =>
-          <ExpenseItem  item= {expense.item_id}  description= {expense.description} time={expense.time}  amount={expense.amount}  location = {expense.location}/ >
+      {expenses.map((expense,index) =>
+          <ExpenseItem description= {expense.title} time={expense.date}  amount={expense.amount} / >
 
       )}
-      <ExpenseForm>
           
-      </ExpenseForm>
-      
-      
     </div>
   );
 }

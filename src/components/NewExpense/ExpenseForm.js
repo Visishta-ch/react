@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+//import NewExpense from './NewExpense';
+import './ExpenseForm.css';
 
-
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
     const [titleEntered, setTitleEntered] = useState('');
     const[amountEntered, setAmountEntered] = useState('');
     const[dateEntered, setDateEntered] = useState('');
@@ -39,20 +40,23 @@ const ExpenseForm = () => {
             amount : amountEntered,
             date: new Date(dateEntered)
         }
-        console.log(dataEntered);
-
+        //console.log(dataEntered);
+        props.onSaveExpenseData(dataEntered); //executing the onsave function from newExpense
+        setTitleEntered('');
+        setAmountEntered('');
+        setDateEntered('');
         
     }
     return (
-        <div>
+        <div class = 'expense-form'>
         <form onSubmit={submitDetails}>
             <label>Expense Title</label>
-            <input type = 'text' onChange={titleHandler} id ='title' placeholder = 'Expense Title' name='description' />
+            <input type = 'text' onChange={titleHandler}  value = {titleEntered} id ='title' placeholder = 'Expense Title' name='description' />
             <label>Amount</label>
             <input type = 'number' onChange={amountHandler} id ='amount'  placeholder = 'Expense Amount' name='amount' />
             <label>Date</label>
             <input type = 'date' onChange={dateHandler} id ='date' placeholder = 'Date' name='date' />
-            <button type = 'submit' >Add Expense</button>
+            <button id='btn' type = 'submit'>Add Expense</button>
           
         </form>
         </div>

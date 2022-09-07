@@ -23,19 +23,17 @@ const  ExpenseItem = (props) => {
     }
 
     const clickDeleteHandler = () => {
-        document.getElementById(props.item).remove();
+        document.getElementById(props.time).remove();
       
       }
     return ( 
-        <Card id={props.item} className= 'expense-item'>
-            ItemNo. {props.item}           
-            
-        
-            <ExpenseDate time ={props.time}/>
-            <ExpenseDetails amount ={amount}
-                description={description}
+        <Card id={props.time} className= 'expense-item'>
+            Item 
+            <ExpenseDetails amount ={props.amount}
+                title = {props.description}
                 location={props.location}
             />
+            <ExpenseDate time ={props.time}/>
             <button onClick={changeAmount}>Edit_Amount</button>
            <button onClick ={clickEditHandler}>Edit</button>
            <button onClick={clickDeleteHandler}>Delete</button>
