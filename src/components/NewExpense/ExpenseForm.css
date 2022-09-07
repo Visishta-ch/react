@@ -9,8 +9,8 @@ body{color: navy;
 }
 
 .expense-form{
-    background-color: gray;
-    
+    background-color: rgb(7, 7, 138);
+    padding:.5rem;
     display:block;
     margin-left: 25%;
     width: 50%;
@@ -18,15 +18,23 @@ body{color: navy;
     align-items: center;
     justify-items: center;
     align-content: center;
+    color: antiquewhite
 }
 
 
 #btn{
-    margin-left : 45%;
+    margin-left : 5%;
     padding : .5rem;
     margin-top: 6px;color: white;
     background-color: black
 
+}
+#btn2{
+      margin-left: 35%;
+      padding : .5rem;
+      margin-top: 6px;color: white;
+      background-color: black
+  
 }
 
 

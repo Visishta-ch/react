@@ -56,8 +56,10 @@ const ExpenseForm = (props) => {
             <input type = 'number' onChange={amountHandler} value ={amountEntered} id ='amount'  placeholder = 'Expense Amount' name='amount' />
             <label>Date</label>
             <input type = 'date' onChange={dateHandler} id ='date' value = {dateEntered}  placeholder = 'Date' name='date' />
+            <button id='btn2' type = 'button' onClick={props.onCancel}>Cancel</button>
+ 
             <button id='btn' type = 'submit'>Add Expense</button>
-          
+                    
         </form>
         </div>
     )

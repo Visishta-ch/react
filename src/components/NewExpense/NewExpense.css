@@ -1,0 +1,15 @@
+/* .new-expense{ 
+    background-color: bisque;
+    
+} */
+
+#add-expense{
+    margin-top: 6px;color: white;
+    background-color:navy;
+    padding: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 42%
+}
