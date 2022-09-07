@@ -7,12 +7,12 @@ import ExpenseFilter from './components/Expenses/ExpenseFilter';
 
 
 const dummyExpenses  = [
-  { title: 'food',date:new Date(2022,6,11),amount:250, location: 'office'},
-  { title: 'petrol', date:new Date(2022,1,7), amount:500,location: 'HpBunk'},
-  { title: 'groceries', date:new Date(2022,2,8), amount:450,location: 'Big_Basket'},
-  { title: 'currentBill', date:new Date(2022,2,9), amount:1500,location: 'houe'},
-  { title: 'swiggy',date:new Date(2022,2,10), amount:250,location: 'office'},
-  { title: 'zomato', date:new Date(2022,2,11),amount:250,location: 'office'}
+  {id: '1',title: 'food',date:new Date(2022,6,11),amount:250, location: 'office'},
+  {id: '2', title: 'petrol', date:new Date(2022,1,7), amount:500,location: 'HpBunk'},
+  {id: '3', title: 'groceries', date:new Date(2022,2,8), amount:450,location: 'Big_Basket'},
+  {id: '4',title: 'currentBill', date:new Date(2022,2,9), amount:1500,location: 'houe'},
+  {id: '5', title: 'swiggy',date:new Date(2022,2,10), amount:250,location: 'office'},
+  {id: '6', title: 'zomato', date:new Date(2022,2,11),amount:250,location: 'office'}
 
   ];
 
@@ -39,8 +39,8 @@ const App = () => {
 
       <NewExpense onAddExpense = {addExpenseHandler} />
       <ExpenseFilter selected={filteredYear} onChangeFilter={filterHandler} />
-      {expenses.map((expense,index) =>
-          <ExpenseItem description= {expense.title} time={expense.date}  amount={expense.amount} / >
+      {expenses.map((expense) =>
+          <ExpenseItem   key = {expense.id} item= {expense.id} description= {expense.title} time={expense.date}  amount={expense.amount} / >
 
       )}
           

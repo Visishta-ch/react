@@ -23,15 +23,15 @@ const ExpenseItem = (props) => {
   };
 
   const clickDeleteHandler = () => {
-    document.getElementById(props.time).remove();
+    document.getElementById(props.amount).remove();
   };
 
 
   
   return (
-    <Card id={props.time} className="expense-item">
+    <Card id={props.amount} className="expense-item">
       
-      Item
+    
       <ExpenseDetails
         amount={props.amount}
         title={props.description}
