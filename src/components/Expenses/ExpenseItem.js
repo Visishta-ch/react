@@ -26,7 +26,7 @@ const ExpenseItem = (props) => {
     document.getElementById(props.amount).remove();
   };
 
-
+ 
   
   return (
     <Card id={props.amount} className="expense-item">
