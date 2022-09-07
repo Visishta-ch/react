@@ -8,38 +8,41 @@ import ExpenseDate from './ExpenseDate';
 import ExpenseDetails from './ExpenseDetails';
 
 
-const  ExpenseItem = (props) => {   
-    const [description, setDescription] = useState(props.description);
-       
-    const clickEditHandler = () => {
-        setDescription('Updated!');
-        console.log(description);
-    }    
-   
-    const[amount, setAmount] = useState(props.amount);
-    const changeAmount = () => {
-        setAmount(`${100}`);
-        console.log(amount);
-    }
+const ExpenseItem = (props) => {
+  const [description, setDescription] = useState(props.description);
 
-    const clickDeleteHandler = () => {
-        document.getElementById(props.time).remove();
+  const clickEditHandler = () => {
+    setDescription('Updated!');
+    console.log(description);
+  };
+
+  const [amount, setAmount] = useState(props.amount);
+  const changeAmount = () => {
+    setAmount(`${100}`);
+    console.log(amount);
+  };
+
+  const clickDeleteHandler = () => {
+    document.getElementById(props.time).remove();
+  };
+
+
+  
+  return (
+    <Card id={props.time} className="expense-item">
       
-      }
-    return ( 
-        <Card id={props.time} className= 'expense-item'>
-            Item 
-            <ExpenseDetails amount ={props.amount}
-                title = {props.description}
-                location={props.location}
-            />
-            <ExpenseDate time ={props.time}/>
-            <button onClick={changeAmount}>Edit_Amount</button>
-           <button onClick ={clickEditHandler}>Edit</button>
-           <button onClick={clickDeleteHandler}>Delete</button>
-        </Card>
-        
-    )
-}
+      Item
+      <ExpenseDetails
+        amount={props.amount}
+        title={props.description}
+        location={props.location}
+      />
+      <ExpenseDate time={props.time} />
+      <button onClick={changeAmount}>Edit_Amount</button>
+      <button onClick={clickEditHandler}>Edit</button>
+      <button onClick={clickDeleteHandler}>Delete</button>
+    </Card>
+  );
+};
 
 export default ExpenseItem;

@@ -1,0 +1,12 @@
+.expenses-filter {
+    color: rgb(34, 30, 30);
+    margin-left: 82%;
+  }
+
+    
+  .expenses-filter select {
+    font: inherit;
+    padding: 0.5rem 2rem;
+    font-weight: bold;
+    border-radius: 6px;
+  }

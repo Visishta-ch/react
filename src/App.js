@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import ExpenseItem from "./components/Expenses/ExpenseItem";
 
 import NewExpense from "./components/NewExpense/NewExpense";
-
+import ExpenseFilter from './components/Expenses/ExpenseFilter';
 
 
 const dummyExpenses  = [
@@ -25,17 +25,20 @@ const App = () => {
     setExpenses((prevExpenses) => {
       return [expense, ...prevExpenses];
     });
-    
-    
 
   }
+
+  const [filteredYear, setFilteredYear] = useState('2022');
+  const filterHandler = (selectedYear) => {
+    setFilteredYear(selectedYear);
+  };
 
   return (
     <div id="expenses">
       <h2>Let's get started!</h2>
 
       <NewExpense onAddExpense = {addExpenseHandler} />
-      
+      <ExpenseFilter selected={filteredYear} onChangeFilter={filterHandler} />
       {expenses.map((expense,index) =>
           <ExpenseItem description= {expense.title} time={expense.date}  amount={expense.amount} / >
 
